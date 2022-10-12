@@ -1,13 +1,13 @@
 const nextBigger = num => num.toString().split('').reverse()
-.reduce((res,x) => res.flag && x < res.array[res.array.length-1] 
-? {array:res.array.slice(0,res.array.length-1).concat(x).concat(res.array.pop()), flag: 0}
-: {array:res.array.concat(x),flag: res.flag}, {array:[],flag: 1})
-.flag ? -1 
-: parseInt(num.toString().split('').reverse()
-.reduce((res,x) => res.flag && x < res.array[res.array.length-1] 
-? {array:res.array.slice(0,res.array.length-1).concat(x).concat(res.array.pop()), flag: 0}
-: {array:res.array.concat(x),flag: res.flag}, {array:[],flag: 1})
-.array.reverse().join(''))
+    .reduce((res, x) => res.flag && x < res.array[res.array.length - 1]
+        ? { array: res.array.slice(0, res.array.length - 1).concat(x).concat(res.array.pop()), flag: 0 }
+        : { array: res.array.concat(x), flag: res.flag }, { array: [], flag: 1 })
+    .flag ? -1
+    : parseInt(num.toString().split('').reverse()
+        .reduce((res, x) => res.flag && x < res.array[res.array.length - 1]
+            ? { array: res.array.slice(0, res.array.length - 1).concat(x).concat(res.array.pop()), flag: 0 }
+            : { array: res.array.concat(x), flag: res.flag }, { array: [], flag: 1 })
+        .array.reverse().join(''))
 
 console.log("12", nextBigger(12))
 console.log("513", nextBigger(513))
