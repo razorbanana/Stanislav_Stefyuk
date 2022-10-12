@@ -1,0 +1,1 @@
+const digital_root = num => num
